@@ -1,0 +1,19 @@
+<div class="container" style="background-color: silver;height: 320px;">
+    <h1>Manage Tasks</h1>
+  
+    <a href="#" routerLink="/task/index" class="btn btn-primary">Back</a>
+    <hr>
+    <div *ngIf="subTasks.length !==0">
+    <h2>Check the sub tasks to complete them</h2>
+    <hr>
+        <div *ngFor="let choice of subTasks; let i=index" class="col-md-2">
+            <label>
+              <input type="checkbox" [value]="choice" (change)="onCheckChange($event)">
+              {{choice}}
+            </label>
+          </div>
+    </div>
+    <div *ngIf="subTasks.length ==0">
+    <h3> There are no sub tasks to view, Please add sub tasks to view</h3>
+    </div>
+</div> 

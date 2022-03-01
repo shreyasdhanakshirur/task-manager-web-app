@@ -1,0 +1,22 @@
+<div class="container" style="background-color: silver;height: 320px;">
+    <h1>Add  Subtasks</h1>
+  
+    <a href="#" routerLink="/task/index" class="btn btn-primary">Back</a>
+        
+    <form [formGroup]="form" (ngSubmit)="submit()">
+  
+         
+        <div class="form-group">
+            <label for="body">Sub Tasks (You can add comma seperated sub tasks)</label>
+            <textarea 
+                formControlName="subTasks"
+                id="body" 
+                type="text" 
+                class="form-control">
+            </textarea>
+        </div>
+        <br>
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid" style="float: right;">Update</button>
+
+    </form>
+</div>

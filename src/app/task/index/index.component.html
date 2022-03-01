@@ -1,0 +1,25 @@
+<div class="container" style="background-color: silver;">
+    <h1>Task Manager Application - Tasks List</h1>
+  
+    <a href="#" routerLink="/task/create/" class="btn btn-success">Create New Task</a>
+    <hr>
+    <table class="table table-bordered">
+      <tr>
+        <th>Task</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th> Date</th>
+        <th width="220px">Action</th>
+      </tr>
+      <tr *ngFor="let task of tasks">
+        <td>{{ task.title }}</td>
+        <td>{{ task.description }}</td>
+        <td>{{ task.status }}</td>
+        <td>{{formatDate(task.dateCreated)}} </td>
+        <td>
+          <a href="#" [routerLink]="['/task/', task._id, 'view']" class="btn btn-info" style="background-color: #0dcaf0">View</a>
+          <a href="#" [routerLink]="['/task/', task._id, 'edit']" class="btn btn-primary" style="background-color: #0d6efd;">Edit</a>
+        </td>
+      </tr>
+    </table>
+ </div>
